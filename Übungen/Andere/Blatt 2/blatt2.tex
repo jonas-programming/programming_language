@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+\usepackage{german}
+
+\begin{document}
+\section*{Aufgabe 3}
+$G_{me}$ = ($\Sigma$=\{$\cup$, $\cap$, $\setminus$, $\mathcal{P}()$\}, V=\{Expr, Sect, Diff, Pow, Opd, UnionOpr, IntersectOpr, DiffOpr, PowOpr, Ident\}, S=Expr, P)\\
+\ \\
+\noindent \underline{Mit P als:}\\
+Expr $\rightarrow$ Expr UnionOpr Sect $|$ Sect\\
+Sect $\rightarrow$ Sect IntersectOpr Diff $|$ Diff\\
+Diff $\rightarrow$ Diff DiffOpr Pow $|$ Pow\\
+Pow $\rightarrow$ PowOpr '(' Opd ')' $|$ Opd\\
+Opd $\rightarrow$ '(' Expr ')' $|$ Ident\\
+UnionOpr $\rightarrow$ '$\cup$'\\
+IntersectOpr $\rightarrow$ '$\cap$'\\
+DiffOpr $\rightarrow$ '$\setminus$'\\
+PowOpr $\rightarrow$ '$\mathcal{P}$'\\
+
+\noindent \underline{Bemerkung:}
+\begin{itemize}
+\item Es gibt eine festgelegte Pr"azedenzhierarchie: $\mathcal{P}()$, $\setminus$, $\cap$, $cup$
+\item In PowOpr'('Opd')' kommen Klammern vor, obwohl diese Produktion nicht ganz unten in der Pr"azedenzhierarchie steht. Die f"uhrt aber nicht zu Komplikationen, da die Potenzmenge bzw. ihr Operator immer mit Klammern dargestellt wird. 
+\end{itemize}
+
+
+
+\section*{Aufgabe 4}
+\paragraph{a)}\ \\
+	Zahl $\rightarrow$ Oktal $\rightarrow$ 0(Digit)* $\rightarrow$ 01 \\
+	Zahl $\rightarrow$ Dezimal $\rightarrow$ (Digit)* $\rightarrow$ 01 \\
+	2 verschiedene Ableitungen f"ur \dq 01\dq $\Rightarrow$ Die Grammatik ist nicht eindeutig
+	
+\paragraph{b)}\ \\
+	G=($\Sigma$=\{0,..,9\}, V=\{Zahl, Oktal, Dezimal, Head, Tail, OctDigit\}, Zahl, P)\\
+	\ \\
+	\noindent \underline{Mit P als:}\\
+	Zahl $\rightarrow$ Dezimal $|$ Oktal\\
+	Oktal $\rightarrow$ 0(OctDigit)*\\
+	Dezimal $\rightarrow$ 0 $|$ Head\\
+	Head $\rightarrow$ \{1,..,9\} Tail\\
+	Tail $\rightarrow$ (\{0,..,9\})*\\
+	OctDigit $\rightarrow$ \{0,..,7\}\\	
+	
+	\noindent Somit haben Oktalzahlen eine f"uhrende Null, wohingegen diese f\"ur Dezimalzahlen verboten wird.
+	
+
+
+
+
+\end{document}
