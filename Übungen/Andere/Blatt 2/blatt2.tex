@@ -6,15 +6,15 @@
 $G_{me}$ = ($\Sigma$=\{$\cup$, $\cap$, $\setminus$, $\mathcal{P}()$\}, V=\{Expr, Sect, Diff, Pow, Opd, UnionOpr, IntersectOpr, DiffOpr, PowOpr, Ident\}, S=Expr, P)\\
 \ \\
 \noindent \underline{Mit P als:}\\
-Expr $\rightarrow$ Expr UnionOpr Sect $|$ Sect\\
-Sect $\rightarrow$ Sect IntersectOpr Diff $|$ Diff\\
-Diff $\rightarrow$ Diff DiffOpr Pow $|$ Pow\\
-Pow $\rightarrow$ PowOpr '(' Opd ')' $|$ Opd\\
-Opd $\rightarrow$ '(' Expr ')' $|$ Ident\\
-UnionOpr $\rightarrow$ '$\cup$'\\
-IntersectOpr $\rightarrow$ '$\cap$'\\
-DiffOpr $\rightarrow$ '$\setminus$'\\
-PowOpr $\rightarrow$ '$\mathcal{P}$'\\
+Expr ::= Expr UnionOpr Sect $|$ Sect\\
+Sect ::= Sect IntersectOpr Diff $|$ Diff\\
+Diff ::= Diff DiffOpr Pow $|$ Pow\\
+Pow ::= PowOpr '(' Opd ')' $|$ Opd\\
+Opd ::= '(' Expr ')' $|$ Ident\\
+UnionOpr ::= '$\cup$'\\
+IntersectOpr ::= '$\cap$'\\
+DiffOpr ::= '$\setminus$'\\
+PowOpr ::= '$\mathcal{P}$'\\
 
 \noindent \underline{Bemerkung:}
 \begin{itemize}
@@ -34,12 +34,12 @@ PowOpr $\rightarrow$ '$\mathcal{P}$'\\
 	G=($\Sigma$=\{0,..,9\}, V=\{Zahl, Oktal, Dezimal, Head, Tail, OctDigit\}, Zahl, P)\\
 	\ \\
 	\noindent \underline{Mit P als:}\\
-	Zahl $\rightarrow$ Dezimal $|$ Oktal\\
-	Oktal $\rightarrow$ 0(OctDigit)*\\
-	Dezimal $\rightarrow$ 0 $|$ Head\\
-	Head $\rightarrow$ \{1,..,9\} Tail\\
-	Tail $\rightarrow$ (\{0,..,9\})*\\
-	OctDigit $\rightarrow$ \{0,..,7\}\\	
+	Zahl ::= Dezimal $|$ Oktal\\
+	Oktal ::= 0(OctDigit)*\\
+	Dezimal ::= 0 $|$ Head\\
+	Head ::= \{1,..,9\} Tail\\
+	Tail ::= (\{0,..,9\})*\\
+	OctDigit ::= \{0,..,7\}\\	
 	
 	\noindent Somit haben Oktalzahlen eine f"uhrende Null, wohingegen diese f\"ur Dezimalzahlen verboten wird.
 	
