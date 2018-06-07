@@ -1,0 +1,5 @@
+Wenn man im Programmcode die Schleifen von i und j tauscht, so dass j die äußere und i die innere Schleife darstellt,
+ändert sich weder an der Befüllung der Matrizen A und B nichts, noch am Endresult der Matrix C.
+
+Intern ändert sich nur die Reihenfolge in welcher die Arrays befüllt werden. Mit j außen Spaltenweise mit i außen Zeilenweise.
+
