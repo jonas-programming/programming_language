@@ -1,0 +1,6 @@
+exp  ::= (exps)
+exps ::= op eles | ele
+eles ::= ele eles | ele
+ele  ::= zif ele | zif
+zif  ::= '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
+op   ::= '+' | '-' | '*' | '/'
